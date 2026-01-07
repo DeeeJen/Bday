@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Magic Cake</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+<h1 class="HB">Happy Birthday!!</h1>
+
+
+
+<div class="layout">
+    <div class="contents">
+        <p style="color: rgb(21, 76, 10;">Wishing you a wonderful birthday this year. May it be filled with joy, laughter, and lovely things.</p>
+    </div>
+
+    <div class="cake-container">
+        <div class="candles">
+            <div class="candle"></div>
+            <div class="candle"></div>
+            <div class="candle"></div>
+        </div>
+
+        <img src="./image/—Pngtree—smooth frosting plain white cake_21317312.png" alt="Cake" class="cake-img">
+
+        <div class="cake-text" id="cakeText">
+            Happy Birthday Dad
+        </div>
+    </div>
+</div>
+<audio controls autoplay src="./Audio/Happy birthday song jazz instrumental waltz  birthday music for adults.mp3"></audio>
+
+<div class="mentioning">
+    <h4 style="color: cadetblue;">Hover over the cake to see it glow</h4>
+</div>
+
+<!-- Confetti Button -->
+<button id="confettiBtn">🎊 Click to Celebrate!</button>
+
+<!-- Confetti container -->
+<div id="confetti-container"></div>
+
+<script>
+const confettiBtn = document.getElementById("confettiBtn");
+const confettiContainer = document.getElementById("confetti-container");
+
+confettiBtn.addEventListener("click", () => {
+    for(let i=0; i<100; i++) {
+        const confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+        confetti.style.backgroundColor = `hsl(${Math.random()*360}, 80%, 60%)`;
+        confetti.style.left = `${Math.random() * window.innerWidth}px`;
+        confetti.style.animationDuration = `${2 + Math.random() * 2}s`;
+        confettiContainer.appendChild(confetti);
+
+        setTimeout(() => confetti.remove(), 4000);
+    }
+});
+</script>
+
+</body>
+</html>

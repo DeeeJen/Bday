@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    background: linear-gradient(to bottom, #cdcaca, #302134);
+}
+
+@font-face {
+    font-family:jaq;    
+    src: url(./Fonts/BerkshireSwash-Regular.ttf);
+}
+@font-face {
+    font-family: Bery;
+    src: url(./Fonts/Barriecito-Regular.ttf)
+}
+
+@font-face {
+    font-family: gely;
+    src: url(./Fonts/GrenzeGotisch-VariableFont_wght.ttf);
+}
+.HB {
+    margin-top: 50px;
+    font-size: 55px;
+    color: #204f46;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    font-family: jaq;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 20px;
+}
+
+.contents p {
+    max-width: 600px;
+    background-color: rgba(225, 245, 211, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-family: gely;
+    
+}
+
+.cake-container {
+    position: relative;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.cake-img {
+    width: 300px;
+    max-width: 90%;
+    margin-bottom: 90px ;
+}
+
+.candles {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+}
+
+.candle {
+    width: 10px;
+    height: 60px;
+    background: #ffcc00;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.cake-container:hover .candle {
+    box-shadow: 0 0 20px 5px #ffeb3b;
+    transform: scaleY(1.2);
+}
+
+.cake-text {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    font-size: 50px;
+    color: #b3e7d7;
+    font-weight: bold;
+    font-family: Bery;
+
+}
+
+#confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    opacity: 0.8;
+    animation: fall linear forwards;
+    border-radius: 3px;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10px); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+#confettiBtn {
+    margin: 20px;
+    padding: 12px 25px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    background-color: #a3ff69;
+    color: rgb(3, 2, 2);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#confettiBtn:hover {
+    background-color: #b881b1;
+}
